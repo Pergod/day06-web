@@ -21,9 +21,6 @@ import com.sun.prism.Image;
  * Êä³öËæ»úÍ¼Æ¬
  */
 public class ResponseDemo2 extends HttpServlet{
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	private static final int width=160;
