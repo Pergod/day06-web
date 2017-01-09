@@ -1,4 +1,4 @@
-package com.itcast.day06;
+package com.itcast.response;
 
 import java.io.FileInputStream;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.itcast.day06;
+package com.itcast.response;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -24,10 +24,10 @@ public class ResponseDemo extends HttpServlet{
 		/*
 		 * 2.指定浏览器以何种码表打开数据
 		 */
-		resp.setHeader("content-type", "text/html;charset='UTF-8'");
+		resp.setHeader("content-type", "text/html;charset=UTF-8");
 		
 		//等于以上两句代码
-//		resp.setContentType("text/html;charset='UTF-8'");
+//		resp.setContentType("text/html;charset=UTF-8");
 		String data="中国";
 		resp.getWriter().write(data);
 	}

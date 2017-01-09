@@ -1,4 +1,4 @@
-package com.itcast.day06;
+package com.itcast.response;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -23,13 +23,13 @@ import com.sun.prism.Image;
 public class ResponseDemo2 extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
-	private static final int width=160;
-	private static final int height=35;
+	private static final int WIDTH=120;
+	private static final int HEIGHT=35;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		BufferedImage image=new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		BufferedImage image=new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 		Graphics graphics=image.getGraphics();
 		
 		/*
@@ -49,8 +49,9 @@ public class ResponseDemo2 extends HttpServlet{
 		 * 4.写随机数
 		 */
 		drawRandomNum((Graphics2D)graphics);
+		
 		/*
-		 * 5.控制浏览器输出格式
+		 * 5.控制浏览器输出格式(浏览器默认以文本方式打开)
 		 */
 		resp.setContentType("image/jpeg");
 		
@@ -107,7 +108,7 @@ public class ResponseDemo2 extends HttpServlet{
 				+ "\u8df3\u975e\u4f55\u725b\u53d6\u5165\u5cb8\u6562\u6389\u5ffd\u79cd\u88c5\u9876\u6025\u6234"
 				+ "\u6797\u505c\u606f\u53e5\u533a\u8863\u822c\u62a5\u53f6\u538b\u6162\u53d4\u80cc\u7ec6\u8273"
 				+ "\u4f50";
-		int x=10;
+		int x=6;
 		for(int i=0;i<4;i++){
 			int degree=new Random().nextInt()%30;	//-30 ~ 30
 			String ch=base.charAt(new Random().nextInt(base.length()))+"";
@@ -121,11 +122,11 @@ public class ResponseDemo2 extends HttpServlet{
 	private void drawRandomLine(Graphics graphics) {
 		graphics.setColor(Color.GREEN);
 		for(int i=0;i<5;i++){
-			int x1=new Random().nextInt(width);
-			int y1=new Random().nextInt(height);
+			int x1=new Random().nextInt(WIDTH);
+			int y1=new Random().nextInt(HEIGHT);
 			
-			int x2=new Random().nextInt(width);
-			int y2=new Random().nextInt(height);
+			int x2=new Random().nextInt(WIDTH);
+			int y2=new Random().nextInt(HEIGHT);
 			
 			graphics.drawLine(x1, y1, x2, y2);
 		}
@@ -133,12 +134,12 @@ public class ResponseDemo2 extends HttpServlet{
 
 	private void setBorder(Graphics graphics) {
 		graphics.setColor(Color.GREEN);
-		graphics.drawRect(1, 1, width-2, height-2);
+		graphics.drawRect(1, 1, WIDTH-2, HEIGHT-2);
 	}
 
 	private void setBackGround(Graphics graphics) {
 		graphics.setColor(Color.BLUE);
-		graphics.fillRect(0, 0, width, height);
+		graphics.fillRect(0, 0, WIDTH, HEIGHT);
 	}
 
 	@Override
