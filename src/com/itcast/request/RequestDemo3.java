@@ -13,9 +13,6 @@ public class RequestDemo3 extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		test1(req, resp);
 		
-		/*
-		 * 此种跳转会导致异常
-		 */
 		PrintWriter writer=resp.getWriter();
 		writer.write("hello");
 		//关闭
